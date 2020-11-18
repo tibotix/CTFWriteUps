@@ -273,7 +273,7 @@ From [MOVAPS Description](https://www.felixcloutier.com/x86/movaps "MOVAPS Descr
 >When the source or destination operand is a memory operand, the operand must be aligned on a 16-byte (128-bit version) boundary or a 
 >general-protection exception (#GP) will be generated.
 
-So the destination operand is `[rsp + 0x50]`, and is obviously not 16-byte aligned.
+So the destination operand is `[rsp + 0x50]`, and is with rsp=`0x7fff4ab111d8` obviously not 16-byte aligned.
 
 Now how we can change `rsp`?
 
@@ -282,7 +282,7 @@ There are multiple instructions that do this:
 - `pop` instruction
 - `call` instruction
 - `ret` instruction
-- `sub` rsp, 0x02
+- `sub` rsp, 0x08
 - `add` rsp, 0x08
 
 Lets use a tiny rop chain to reduce `rsp` by using one other `ret` instruction.
@@ -341,7 +341,7 @@ This section covers a few prevention measures for the above discussed security i
 
 ### Format String Protection
 
-Basically the best thing you can do to mitigate Format String exploits are the corrext usage of `printf` **with formatters**:
+Basically the best thing you can do to mitigate Format String exploits are the correct usage of `printf` **with formatters**:
 
 ```C++
 printf("Hello, %s", name);
