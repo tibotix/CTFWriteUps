@@ -94,7 +94,7 @@ printf_offset = 0x64e80
 libc_base = printf_addr - printf_offset
 ```
 
-Next, we use the tool called [one*_*gadget](https://www.notion.so/one_gadget-ef7f874242e54bd2af6fef360e2c66ae) to recieve a gadget that spawns a shell simply by calling it. 
+Next, we use the tool called [one_gadget](https://www.notion.so/one_gadget-ef7f874242e54bd2af6fef360e2c66ae) to recieve a gadget that spawns a shell simply by calling it. 
 
 ![Tale%20of%20Two%204dc3de506bdd4759afe29e6635e3ed77/one_gadget_output.png](Tale%20of%20Two%204dc3de506bdd4759afe29e6635e3ed77/one_gadget_output.png)
 
