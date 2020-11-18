@@ -30,7 +30,7 @@ So when feeding username=`' or '1'='1` and password=`' or '1'='1` , the SQL Stat
 SELECT * FROM users_db WHERE user='' or '1'='1' and password='' or '1'='1'
 ```
 
-This is a valid SQL Statement and will always return true.
+This is a valid SQL Statement and will return the whole data record hold in users_db.
 
 ## 🔐 Exploit Programm:
 
